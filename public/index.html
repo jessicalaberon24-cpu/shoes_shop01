@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Arciete's Shoes Shop 👟</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>Arciete's Shoes Shop 👟</h1>
+
+    <nav>
+
+        <button onclick="showSection('products')">
+            Products
+        </button>
+
+        <button onclick="showSection('cart')">
+            Cart 🛒
+            <span id="cartCount">0</span>
+        </button>
+
+        <button onclick="showSection('orders')">
+            My Orders
+        </button>
+
+        <button
+            id="loginNav"
+            onclick="showSection('login')">
+            Login
+        </button>
+
+        <button
+            id="logoutNav"
+            onclick="logout()"
+            style="display:none;">
+            Logout
+        </button>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+
+<!-- ================================= -->
+<!-- LOGIN -->
+<!-- ================================= -->
+
+<section
+    id="login"
+    class="section">
+
+    <div class="box">
+
+        <h2>Login</h2>
+
+        <input
+            id="loginEmail"
+            type="email"
+            placeholder="Email">
+
+        <input
+            id="loginPassword"
+            type="password"
+            placeholder="Password">
+
+        <button onclick="login()">
+            Login
+        </button>
+
+        <p>
+            No account?
+            <button
+                class="linkBtn"
+                onclick="showSection('signup')">
+                Sign Up
+            </button>
+        </p>
+
+        <p id="loginMessage"></p>
+
+    </div>
+
+</section>
+
+
+<!-- ================================= -->
+<!-- SIGN UP -->
+<!-- ================================= -->
+
+<section
+    id="signup"
+    class="section">
+
+    <div class="box">
+
+        <h2>Create Account</h2>
+
+        <input
+            id="signupName"
+            type="text"
+            placeholder="Full Name">
+
+        <input
+            id="signupEmail"
+            type="email"
+            placeholder="Email">
+
+        <input
+            id="signupPassword"
+            type="password"
+            placeholder="Password">
+
+        <button onclick="signup()">
+            Sign Up
+        </button>
+
+        <p id="signupMessage"></p>
+
+    </div>
+
+</section>
+
+
+<!-- ================================= -->
+<!-- PRODUCTS -->
+<!-- ================================= -->
+
+<section
+    id="products"
+    class="section active">
+
+    <h2>Our Shoes 👟</h2>
+
+    <div
+        id="productsContainer"
+        class="products">
+    </div>
+
+</section>
+
+
+<!-- ================================= -->
+<!-- CART -->
+<!-- ================================= -->
+
+<section
+    id="cart"
+    class="section">
+
+    <h2>My Cart 🛒</h2>
+
+    <div id="cartContainer"></div>
+
+    <div class="cartSummary">
+
+        <h3>
+            Selected Total:
+            ₱<span id="cartTotal">0.00</span>
+        </h3>
+
+        <button onclick="checkout()">
+            Checkout
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================================= -->
+<!-- ORDERS -->
+<!-- ================================= -->
+
+<section
+    id="orders"
+    class="section">
+
+    <h2>My Orders 📦</h2>
+
+    <div id="ordersContainer">
+        Please login to see your orders.
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- ================================= -->
+<!-- PAYMENT MODAL -->
+<!-- ================================= -->
+
+<div
+    id="paymentModal"
+    class="modal">
+
+    <div class="modalBox">
+
+        <h2>Select Payment</h2>
+
+        <button onclick="startPayMayaPayment()">
+            Maya / PayMaya
+        </button>
+
+        <button onclick="placeCODOrder()">
+            Cash on Delivery
+        </button>
+
+        <button onclick="closePaymentModal()">
+            Cancel
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
